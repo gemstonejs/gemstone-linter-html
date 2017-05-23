@@ -6,7 +6,7 @@
 
 /*  load external requirements  */
 const path             = require("path")
-const fs               = require("fs-promise")
+const fs               = require("mz/fs")
 const HTMLHint         = require("htmlhint").HTMLHint
 const HTMLHintGemstone = require("gemstone-config-htmlhint")
 
