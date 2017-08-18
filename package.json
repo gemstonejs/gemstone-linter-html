@@ -19,7 +19,7 @@
         "url":  "http://github.com/gemstonejs/gemstone-linter-html/issues"
     },
     "devDependencies": {
-        "eslint":                         "~4.3.0",
+        "eslint":                         "~4.4.1",
         "eslint-config-standard":         "~10.2.1",
         "eslint-plugin-standard":         "~3.0.1",
         "eslint-plugin-promise":          "~3.5.0",
@@ -30,7 +30,7 @@
     "dependencies" : {
         "mz":                             "~2.6.0",
         "htmlhint":                       "~0.9.13",
-        "gemstone-config-htmlhint":       "~0.9.13"
+        "gemstone-config-htmlhint":       "~0.9.14"
     },
     "engines": {
         "node":                           ">=7.6.0"
