@@ -30,7 +30,7 @@
     "dependencies" : {
         "mz":                             "2.7.0",
         "htmlhint":                       "0.10.1",
-        "gemstone-config-htmlhint":       "0.9.29"
+        "gemstone-config-htmlhint":       "0.9.30"
     },
     "engines": {
         "node":                           ">=8.0.0"
