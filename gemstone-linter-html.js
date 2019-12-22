@@ -7,11 +7,12 @@
 /*  load external requirements  */
 const path             = require("path")
 const fs               = require("mz/fs")
-const HTMLHint         = require("htmlhint").HTMLHint
+const HTMLHint         = require("htmlhint")
 const HTMLHintGemstone = require("gemstone-config-htmlhint")
 
 /*  add custom Gemstone rules  */
-const config = HTMLHintGemstone(HTMLHint)
+const htmlhint = new HTMLHint.HTMLHint()
+const config = HTMLHintGemstone(htmlhint)
 
 /*  exported API function  */
 module.exports = async function (filenames, opts = {}, report = { sources: {}, findings: [] }) {
@@ -32,7 +33,7 @@ module.exports = async function (filenames, opts = {}, report = { sources: {}, f
 
         /*  lint the source code  */
         const rules = Object.assign({}, config, opts.rules)
-        const messages = HTMLHint.verify(source, rules)
+        const messages = htmlhint.verify(source, rules)
         if (messages.length > 0) {
             for (let j = 0; j < messages.length; j++) {
                 report.findings.push({
