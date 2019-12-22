@@ -11,7 +11,7 @@ const HTMLHint         = require("htmlhint").HTMLHint
 const HTMLHintGemstone = require("gemstone-config-htmlhint")
 
 /*  add custom Gemstone rules  */
-let config = HTMLHintGemstone(HTMLHint)
+const config = HTMLHintGemstone(HTMLHint)
 
 /*  exported API function  */
 module.exports = async function (filenames, opts = {}, report = { sources: {}, findings: [] }) {
@@ -25,14 +25,14 @@ module.exports = async function (filenames, opts = {}, report = { sources: {}, f
             opts.progress(i / filenames.length, `linting HTML: ${filenames[i]}`)
 
         /*  read source code  */
-        let source = await fs.readFile(filenames[i], "utf8")
+        const source = await fs.readFile(filenames[i], "utf8")
 
         /*  determine name  */
-        let name = path.relative(process.cwd(), filenames[i])
+        const name = path.relative(process.cwd(), filenames[i])
 
         /*  lint the source code  */
-        let rules = Object.assign({}, config, opts.rules)
-        let messages = HTMLHint.verify(source, rules)
+        const rules = Object.assign({}, config, opts.rules)
+        const messages = HTMLHint.verify(source, rules)
         if (messages.length > 0) {
             for (let j = 0; j < messages.length; j++) {
                 report.findings.push({
